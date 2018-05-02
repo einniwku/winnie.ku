@@ -1,0 +1,99 @@
+// footer.less
+
+.footer-main {	
+	.clearfix;
+	.make-sm-column(12);
+	padding: @spacing/2 0 @spacing*6;
+	background-color: @footer-bg;
+	
+	.nav {
+		.make-sm-column(9);
+		.make-xs-column(12);
+		*behavior: url('/css/boxsizing.htc');
+		padding: 0;
+		padding-top: @spacing;
+		list-style:none;
+		margin: 0;
+		
+		li {
+			.bordered-list-left;			
+		}
+
+		a {
+			font-size: @footer-font-size;
+			padding: 0 @spacing;
+			display: block;
+			color: @footer-links;
+			border: none;
+
+			&:hover {
+			}
+		}
+	}
+
+	.vclogo {
+		.pull-right;
+		margin-right: 0;
+		display: block;
+		width: 120px;
+		height: 30px;
+		//text-indent: -5000px;
+		//background: url('https://logo.visioncriticalpanels.com/vclogo_grey.png');
+		//background: url('https://logo.visioncriticalpanels.com/vclogo_darkgrey.png');
+		//background: url('https://logo.visioncriticalpanels.com/vclogo_white.png');
+
+		img {
+			width: 120px;
+			height: 30px;
+		}
+
+	}
+
+	@media (max-width: 1335px){
+		.nav{
+			padding: 0 @spacing*1.5;
+		}
+
+		.vclogo{
+			margin-right: @spacing*1.5;
+		}
+	}
+
+	@media (max-width: @screen-xs) {		
+		.make-row;
+		padding: 0 !important;
+		border: 0;
+		border-top: solid 1px lighten(#000000, 60%);
+
+		.nav {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				display: block;
+				width: 100%;
+				float: none;
+				border-bottom: solid 1px lighten(#000000, 60%);
+				border-left: none;
+				padding: 0;
+
+				&:first-child a {
+					padding-left: @spacing;
+				}
+			}
+
+			a {
+				display: block;
+				text-align: center;
+				padding: @spacing;
+				font-size: @footer-font-size;
+				border-left: none;
+			}
+		}
+
+		.vclogo {
+			margin: @spacing @spacing*3.5 @spacing 0;
+			display: block;
+		}
+	}
+}

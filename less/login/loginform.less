@@ -1,0 +1,146 @@
+.login-form {
+	.clearfix;
+	padding: @spacing*2 @spacing*2 @spacing*6;
+	color: #444444;
+
+	.form-group {
+		margin-bottom: @spacing;
+	}
+
+	input[type="text"], input[type="password"] {
+		border-radius: 0px;
+		line-height: @login-subtext-fontsize;
+		padding: @spacing*1.1 @spacing*1.2;
+		background-position: @spacing center;
+		background-repeat: no-repeat;
+		background: @login-textfield-bg;
+		border: @login-textfield-border;
+		box-shadow: none;
+	}
+
+	input[type="text"] {
+	}
+
+	input[type="password"],
+	.password-field {
+	}
+
+	.input-field {
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #ffffff !important;
+	    }
+	    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	        color: #ffffff !important;
+	        opacity: 1;
+	    }
+	    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+	        color: #ffffff !important;
+	        opacity:  1;
+	    }
+	    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+	        color: #ffffff !important;
+	    }
+
+	    &:focus{
+	    	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	            color: @color-placeholder !important;
+		    }
+		    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		        color: @color-placeholder !important;
+		        opacity: 1;
+		    }
+		    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+		        color: @color-placeholder !important;
+		        opacity:  1;
+		    }
+		    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+		        color: @color-placeholder !important;
+		    }
+	    }
+	}
+
+	p {
+		display: none;
+	}
+
+	.form-submit {
+		.clearfix;
+	}
+
+	.btn-login {
+		float: left;
+	}
+
+	.form-input input {
+		height: auto;
+	}
+
+	.form-input label {
+		display: block;
+		font-weight: normal;
+	}
+
+	.errMsg {
+		clear: both;
+		display: block;
+		margin: @spacing 0;
+		color: @errmsg;
+		font-size: @login-subtext-fontsize;
+	}
+
+	.submit-forgot-password {
+		float: right;
+		clear: both;
+		margin: 0;
+		display: block;
+		padding-left: 0;
+		padding-top: 10px;		
+		font-size: 0.875rem;
+
+		
+		@media(min-width: 825px){
+			margin-top: -@spacing*16.5;
+		}
+	}
+
+	.submit-field {
+		float: right;
+	}
+
+	.form-checkbox {
+		.hidden-xs;
+		position: relative;
+		z-index: 999;
+		margin: @spacing 0;
+		font-size: @login-subtext-fontsize;
+		width: 100%;
+
+		@media(min-width: 825px){
+			width: 50%;
+		}
+
+		label {
+			line-height: @login-subtext-fontsize;
+		}
+	}	
+
+	@media (max-width: @screen-xs) {
+		padding: @spacing*2;
+		.form-input input {
+			font-size:  1.143rem;
+		}
+
+		.submit-forgot-password{
+			margin-top: 0;
+		}
+	
+		.submit-field {
+			padding: 0;
+			float: none;
+
+		 	input {
+				margin-top: @spacing;
+		 	}
+		}
+	}
+}

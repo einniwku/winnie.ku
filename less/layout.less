@@ -1,0 +1,179 @@
+// layout.less
+
+@media (min-width: @screen-sm) { 
+	.container {
+		max-width: 1010px;
+	}	
+
+	.inner{
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+}
+
+/*
+	uncomment this section below for 100% width portal
+	add the .container-inner class on any div that you
+	want to be the regular width inside of the container
+	(example: add to .content for the whole content div)
+*/
+
+/*@media (min-width: @screen-sm) {
+	.container {
+		max-width: 100%;
+		padding: 0;
+	}
+
+	.container-inner {
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 0 @spacing;
+	}
+}*/
+
+body {		
+	background: @body-bg-color;
+	@media (max-width: @screen-xs) {
+		margin: 0;
+		font-size: @font-size-base-mobile;
+	}
+} 
+
+.body-wrapper{
+	background: #ffffff;
+}
+
+/* Login and Member Layout */
+
+.content {
+	.clearfix;
+	*behavior: url('/css/boxsizing.htc');
+
+	.content-heights {
+		/* for whatever reason, you need both of these to make this div pick up the height */
+		clear: both;
+		.clearfix;
+	}
+
+	.content-primary, .content-secondary, .content-tertiary {
+		.clearfix;
+		*behavior: url('/css/boxsizing.htc');
+	}
+
+	@media (max-width: @screen-xs) {
+		.make-row;
+	}
+}	
+
+
+/* Login Layout */
+
+.login {
+
+	.content-heights{
+		padding: @spacing*2 0 @spacing*8;
+
+		@media (max-width: @screen-xs){
+			padding: 0;
+		}
+	}
+
+	.content-primary {		
+		.make-sm-column(5);
+		.make-sm-column-push(7);
+		padding: 0;
+		padding-left: @spacing;
+
+		
+		@media (max-width: @screen-xs) {
+			padding: @spacing*2;
+		}
+	}
+
+	.content-secondary {
+		.make-sm-column(7);	
+		.make-sm-column-pull(5);
+		padding: 0 @spacing 0 0;
+
+		@media (max-width: @screen-xs) {	
+			padding: 0 @spacing*2 @spacing*2;
+		}
+	}
+
+	.content-tertiary {
+		display: none;
+	}
+
+	.content-quaternary {
+		display: none;
+	}
+}
+
+/* Member Layout */
+
+.member {	
+	.content-heights{
+		padding: @spacing*2 0 0;
+	}
+	.content-primary {
+		.make-sm-column(4);		
+		padding: 0;
+		min-height: 0;
+
+		.widget-wrapper{
+			padding-right: @spacing;
+		}
+
+		@media (max-width: @screen-xs){
+			.widget-wrapper{
+				padding: 0 @spacing*1.5;
+			}
+		}
+	}
+
+	.content-secondary {
+		.make-sm-column(4);
+		padding: 0;
+		min-height: 0;
+
+		.widget-wrapper{
+			padding: 0 @spacing;
+		}
+
+		@media (max-width: @screen-xs){
+			.widget-wrapper{
+				padding: 0 @spacing*1.5;
+			}
+		}
+	}
+
+	.content-tertiary {
+		.make-sm-column(12);
+		.make-sm-column-pull(0);
+		padding: 0;
+		min-height: 0;
+
+		@media (max-width: @screen-xs){
+			padding: 0;
+		}
+	}
+
+	.content-quaternary {
+		.make-sm-column(4);	
+		padding: 0;	
+		.clearfix;
+		min-height: 0;
+		min-height: 0;
+
+		.widget-wrapper{
+			padding-left: @spacing;
+		}
+
+
+		@media (max-width: @screen-xs){
+			.widget-wrapper{
+				padding: 0 @spacing*1.5;
+			}
+		}
+	}
+}

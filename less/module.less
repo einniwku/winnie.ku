@@ -1,0 +1,170 @@
+// module.less
+
+a.more {
+	font-weight: normal;
+	display: inline-block;
+
+	@media (max-width: @screen-xs) {
+		.btn;
+		.mobile;
+	}
+}
+
+.btn {
+	display: inline-block;
+	*display: inline;
+	zoom: 1; 
+	padding: @spacing @spacing*2.1;
+	border-radius: @button-border-radius;
+	font-size: @button-font-size;
+	font-weight: @button-font-weight;
+	color: @button-font-color;
+	text-align: center;
+	text-transform: @button-text-transform;
+	background-color: @button-bg;
+	transition: background-color 0.25s ease;
+	border: @button-border;
+	
+	&:hover {
+		background-color: @button-bg-hover;
+		text-decoration: none;
+		color: @button-font-color;
+	}
+
+	&.disabled {
+		background-color: @button-bg-disabled;
+
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+
+	@media (max-width: @screen-xs) {
+		width: 100%;
+		margin: 0 0 1px 0;
+		text-align: center;
+		display: block;
+	}
+
+	// add this to regular links that behave to force button behavior
+	&.mobile {
+		width: 100%;
+		margin: 0 0 1px 0;
+		text-align: center;
+		display: block;
+	}
+}
+
+.btn-secondary {
+	background-color: @button-secondary-bg;
+	color: @button-secondary-color;
+
+	&:hover {
+		background-color: @button-secondary-bg-hover;
+		color: @button-secondary-color-hover;
+	}
+}
+
+.transition {
+	transition: background-color 0.25s ease;
+}
+
+.img-responsive {
+	width: 100%;
+	height: auto;
+}
+
+/* Bordered lists */
+
+.bordered-list-left {
+	float: left;
+
+	> * {
+		border-left: solid 1px @border-color;
+		display: block;
+	}
+
+	&:first-child > * {
+		border-left: none;
+		padding-left: 0
+	}
+}
+
+.bordered-list-right {
+	float: right;
+
+	> * {
+		border-right: solid 1px @border-color;
+	}
+
+	&:last-child > * {
+		border-right: none;
+		padding-right: 0
+	}
+}
+
+.bordered-list-bottom {
+	border-bottom: solid 1px @border-color-secondary;
+	padding-top: @spacing /2;
+	padding-bottom: @spacing /2;
+	width: 100%;
+	float: none;
+	clear: both;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+/* Error Modal (disabled in script.js by default) */
+
+.modal {
+	@media (min-width: @screen-sm) {
+		padding-top: 15%;
+	}
+
+	* {
+		border: none;
+	}
+
+	.modal-header {
+		.clearfix;
+		padding: @spacing*1.5;
+		border-bottom: 1px solid @border-color;
+	}
+
+	h4 {
+		.pull-left;
+		font-size: 2rem;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.close {
+		.pull-right;
+		color: #fff;
+		font-size: 2rem;
+		line-height: 1;
+
+		&:hover {
+			color: darken(@color-primary, 25%);
+			text-decoration: none;
+		}
+	}
+
+	.modal-body {
+		padding: @spacing @spacing*1.5;
+	}
+
+	.modal-dialog {
+		max-width: 300px;
+	}
+
+	.modal-content {
+		color: @text-color;
+	}
+
+	.modal-footer {
+		padding-top: 0;
+	}
+}

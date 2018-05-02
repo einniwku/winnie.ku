@@ -1,0 +1,224 @@
+// survey.less
+
+.survey-wrapper, .studies-list-full {
+	position: relative;	
+	.clearfix;
+
+	h1, h2 {
+		*behavior: url(../boxsizing.htc);
+		overflow: hidden;
+		padding: 0 0 @spacing/2 0;
+		display: inline-block;	
+	}
+
+	> .closedate {
+		.make-sm-column(7);
+		*behavior: url(../boxsizing.htc);
+		text-align: right;
+		padding: 0;
+		margin-bottom: @spacing;
+		padding-top: .5em;
+	}
+
+	.list-item {
+		.bordered-list-bottom;
+		.clearfix;
+		padding-top: @spacing*1.5;
+		padding-bottom: @spacing*1.5;
+
+		&:first-of-type {
+			border-top: 1px solid @border-color-secondary;
+		}
+	}
+	
+	.item-header {
+		display: inline;
+		color: @link-color;
+		padding: 0;
+		margin: 0;
+		*behavior: url(../boxsizing.htc);
+	}
+
+	.label-closedate {
+		position: absolute;
+		right: 0;
+		top: 10px;
+		font-size: @survey-subtext-fontsize;
+		color: @survey-subtext;
+	}
+
+	.item-close-date {
+		display: inline;
+		.clearfix();
+		.pull-right;
+		font-size: @survey-subtext-fontsize;
+		text-align: right;
+		padding: 0;
+		color: @survey-subtext;
+		*behavior: url(../boxsizing.htc);
+	}
+
+	.item-desc {
+		display: none;
+	}
+
+	/* This is for the "stay tuned for upcoming activities" text */
+	.stdLstNoDataLbl {
+		color: @text-color;
+	}
+
+	.btn-all {
+		margin-top: @spacing;
+		display: block;
+
+		a{
+			.btn;
+		}
+	}
+
+	// full survey list page
+
+	ul, .pagination {
+		.pull-right;
+		margin: 0 0 @spacing*1.5 0;
+		background-color: @color-primary;
+		float: right;
+		display: inline-block;
+		zoom: 1; *display: inline;
+		padding: 5px 15px;
+		text-align: right;
+
+		> * {	
+			margin: 5px 5px 5px 15px;
+			
+			display: inline-block;
+			zoom: 1; *display: inline;
+			color: #fff;
+		}
+
+		a{
+			color: #fff;
+		}
+	}
+
+	.pagination:last-of-type {
+		margin-top: @spacing;
+	}
+
+	@media (max-width: @screen-xs) {
+		padding-bottom: @spacing;
+
+		h1, h2 {
+			margin-bottom: @spacing;
+			padding-bottom: @spacing/2;
+		}
+
+		.label-closedate {
+			display: none;
+		}
+
+		.item-close-date {
+			display: none;
+		}
+
+		.btn-all a {
+			.btn;
+			.mobile;
+			margin-top: @spacing*2;
+		}
+
+		.pagination, ul {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			float: none !important;
+			display: block;
+
+			span, li {
+				display: inline-block;
+				text-align: center;
+				float: none;
+			}
+
+			.btn-prev, .btn-list-all {
+				float: left;
+			}
+
+			.btn-next, .btn-list-all-complete {
+				float: right;
+			}
+		}
+
+		ul {
+			margin-bottom: @spacing;
+		}
+	}
+
+	@media (max-width: @screen-xs) {
+		.list-item {
+			padding: @spacing 0;
+		}		
+	}
+}
+
+.survey-wrapper {
+	.survey {
+		position: relative;
+
+		.item-close-date{
+			display: none;
+		}
+
+		.label-closedate{
+			display: none;
+		}
+
+		h2{
+			padding-top: @spacing/2;
+		}
+	}
+
+	@media (max-width: @screen-xs){
+		padding: 0;
+	}
+}
+
+.studies-list-full {
+	.studies-list-container {
+		.clearfix;
+	}
+	
+	.item-header {
+		display: inline;
+		padding-left: 0;
+	}
+
+	.item-close-date {
+		.make-sm-column(6);
+		display: inline-block;
+	}
+
+	.item-status {
+		.pull-right;
+		.make-sm-column(2);
+		display: inline-block;
+		text-align: right;
+		padding-right: 0;
+		.hidden-xs;
+		font-size: @survey-subtext-fontsize;
+		color: @survey-subtext;
+	}
+
+	@media (max-width: @screen-md) {
+		.item-status {
+			display: none !important;
+		}
+	}
+
+	@media (max-width: @screen-xs) {
+		.item-close-date {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+// header.less
+
+.header-main {	
+	*behavior: url('/css/boxsizing.htc');
+	border-bottom: @header-border-bottom;
+	background: @header-bg-color;
+
+	img.logo {
+		max-width: 100%;
+	}
+
+	a.logo {
+		display: block;
+		border: none;
+	}
+
+	@media (max-width: @screen-xs) {
+		//.make-row;
+		.logo {
+			height: auto;
+		}
+	}
+}
+

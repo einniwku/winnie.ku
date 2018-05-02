@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<!-- AS OF 03/26/14 FULLY RESPONSIVE -->
+<script language="C#" runat="server">
+
+</script>
+
+<asp:ContentPlaceHolder id="ServerScripts" runat="server"></asp:ContentPlaceHolder>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="<%=((IOpenPortalHost)this.Page).SkinBaseUrl%>/css/style.css">
+		<link rel="icon" type="image/png" href="images/favicon.png">	
+
+		<!--[if lt IE 10]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!-- Content Place Holder: HEADER //-->
+		<asp:ContentPlaceHolder id="head" runat="server" />
+		<!-- Content Place Holder: StyleSheet Override //-->
+		<asp:ContentPlaceHolder id="css" runat="server" /> 
+		<!-- Accessible template -->   
+	</head>
+
+	<body>
+	    <form id="form1" runat="server">			
+            <asp:HiddenField runat="server" id="SessionSafeHiddenField" />
+            <button type="submit" value="Submit" id="hiddenButton">Submit</button>
+
+			<header class="header-main">
+				<div class="inner">
+					<a href="main.aspx" class="logo"><img src="/images/logo.png" alt="<%= ((IOpenPortalHost)this.Page).PanelContext.ContextName %>" class="logo"></a>
+					<asp:ContentPlaceHolder id="userdetail" runat="server" />
+				</div>
+			</header>
+
+			<div class="navigation-wrapper">
+				<div class="inner">
+					<asp:ContentPlaceHolder id="navigation" runat="server" /> 
+				</div>
+			</div>
+
+			<div class="body-wrapper">
+				<div class="container body">	  
+
+					<div class="content">		
+						<div class="content-tertiary"><asp:ContentPlaceHolder id="contentTertiary" runat="server" /></div>
+
+						<div class="content-heights">																
+							<div class="content-primary"><asp:ContentPlaceHolder id="contentPrimary" runat="server" /></div>	
+							<div class="content-secondary"><asp:ContentPlaceHolder id="contentSecondary" runat="server" /></div>	
+							<div class="content-quaternary">
+								<asp:ContentPlaceHolder id="contentQuaternary" runat="server" />
+							</div>	
+						</div>					
+					</div>
+			    </div>
+			</div>
+
+			<footer class="footer-main">	
+				<div class="inner">
+					<ul class="nav">
+						<li></li>
+						<li></li>
+					</ul>
+				</div>	
+			</footer>
+		</form>		
+
+		<script src="/js/min/jquery.min.js"></script>		
+
+		<script src="/js/min/script.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+		<asp:ContentPlaceHolder id="javascript" runat="server" />
+	</body>
+</html>

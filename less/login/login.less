@@ -1,0 +1,41 @@
+// login.less 
+
+body.login {
+
+	.primary-wrapper{
+		border: 1px solid @border-color;
+		border-radius: @button-border-radius;
+	}
+
+	.secondary-wrapper{
+		border: 1px solid @border-color;
+		border-radius: @button-border-radius;
+		padding: @spacing*2;
+		height: 100%;
+	}
+
+	.join-now {
+		position: absolute;
+		margin-top: -@spacing*7.4;
+		margin-left: @spacing*11.5;
+		
+		a {
+			.btn;	
+			.btn-secondary;
+		}
+	}
+
+
+	@media (max-width: @screen-xs) {
+		.join-now{
+			position: relative;
+			margin: 0;
+			margin-top: @spacing;
+		}
+
+		.welcome-wrapper{
+			padding: 0;
+		}
+		
+	}
+}
